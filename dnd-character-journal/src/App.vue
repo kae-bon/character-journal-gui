@@ -1,5 +1,4 @@
 <template>
-  <header>hello, world</header>
   <AddCharacterForm />
   <RouterView />
 </template>

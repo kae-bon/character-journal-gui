@@ -19,11 +19,11 @@ export function createStore() {
                 { name: "Warlock" },
                 { name: "Wizard" },
             ],
-            characters: {}
+            characters: [],
         },
         mutations: {
             ADD_CHARACTER(state, payload) {
-                state.characters.push(payload);
+                state.characters.unshift(payload);
             }
         }
     })
