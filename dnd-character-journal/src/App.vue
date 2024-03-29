@@ -1,10 +1,17 @@
 <template>
   <header>hello, world</header>
+  <AddCharacterForm />
   <RouterView />
 </template>
 
-<script setup>
+<script>
+import AddCharacterForm from './components/AddCharacterForm.vue';
 
+export default {
+  components: {
+    AddCharacterForm
+  }
+}
 </script>
 
 <style scoped></style>

@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createMemoryHistory, createRouter } from '../node_modules/vue-router';
+import { createStore } from './store'
+
+const store = createStore();
 
 const routes = [
     { path: '/', component: null }
@@ -13,4 +16,5 @@ const router = createRouter({
     history: createMemoryHistory(),
     routes,
 })
-createApp(App).use(router).mount('#app')
+
+createApp(App).use(store).use(router).mount('#app')
