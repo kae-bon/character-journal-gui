@@ -1,26 +1,47 @@
-@import "../../node_modules/bootstrap/scss/_functions.scss";
+@import "../../node_modules/bootstrap/scss/functions.scss";
 
+$primary: #6494AA;
+$secondary: #F3B61F;
+$ternary: #960200;
+$light: #EEF4ED;
+$dark: #151515;
 
-$primary: #548c2f;
-$secondary: #ffd449;
-$success: #f9a620;
-$light: #aab03c;
-$dark: #104911;
+$focus-ring-width: .25rem;
+$focus-ring-opacity: .25;
+$focus-ring-color: rgba($primary, $focus-ring-opacity);
+$focus-ring-blur: 0;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
 
+$form-check-input-checked-color: $light;
+$form-check-input-checked-bg-color: $primary;
+$form-check-input-focus-border: $primary;
+$form-check-input-focus-box-shadow: $focus-ring-box-shadow;
+$btn-color: $light;
+
+header {
+    background-color: $primary;
+}
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
-
-
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
+
 @import "../../node_modules/bootstrap/scss/root";
 
-
 @import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
 @import "../../node_modules/bootstrap/scss/grid";
 @import "../../node_modules/bootstrap/scss/helpers";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+
+body {
+    background-color: $dark;
+}
