@@ -8716,4 +8716,13 @@ body {
   background-color: #151515;
 }
 
+.nav-link:hover {
+  color: #F3B61F;
+}
+
+h2, .h2 {
+  font-style: italic;
+  color: #6494AA;
+}
+
 /*# sourceMappingURL=custom.css.map */

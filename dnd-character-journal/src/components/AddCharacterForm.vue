@@ -4,8 +4,8 @@
             <strong>Holy guacamole!</strong> {{ err }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <h2 class="mb-3 col">Register Your New Character!</h2>
-        <form class="w-50 container p-3" @submit.prevent="checkAtLeastOneClassSelected">
+        <h2 class="mb-5 mt-5 col">Register Your New Character!</h2>
+        <form class="container-md w-50 p-3" @submit.prevent="checkAtLeastOneClassSelected">
             <h3 class="mb-4">General Information</h3>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control focus-ring" id="floatingName" placeholder="Rinn Thiatora"
@@ -24,7 +24,7 @@
             </div>
             <div class="classes mb-3">
                 <h4>Select at least One Class</h4>
-                <div class="d-flex flex-md-wrap">
+                <div class="container-sm">
                     <div class="form-check mb-1 d-inline-block w-50" v-for="pclass in classes" v-bind:key="pclass">
                         <input class="form-check-input" type="checkbox" :id="pclass.name" name="classes"
                             v-model="newCharacter.classes" :value="pclass.name">
@@ -34,7 +34,7 @@
             </div>
             <div class="d-flex justify-content-between">
                 <input class="btn btn-primary text-light" type="submit" value="register character">
-                <button class="btn btn-danger text-light" @click="resetForm">cancel</button>
+                <button class="btn btn-danger text-light" @click.stop="resetForm">cancel</button>
             </div>
         </form>
     </div>
@@ -70,10 +70,8 @@ export default {
             }
         },
         registerCharacter() {
-
             this.$store.commit('ADD_CHARACTER', this.newCharacter);
             this.resetForm();
-
         },
         resetForm() {
             this.newCharacter = {};

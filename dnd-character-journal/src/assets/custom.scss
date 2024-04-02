@@ -18,9 +18,12 @@ $form-check-input-focus-border: $primary;
 $form-check-input-focus-box-shadow: $focus-ring-box-shadow;
 $btn-color: $light;
 
+
 header {
     background-color: $primary;
 }
+
+
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
@@ -44,4 +47,13 @@ header {
 
 body {
     background-color: $dark;
+}
+
+.nav-link:hover {
+    color: $secondary;
+}
+
+h2 {
+    font-style: italic;
+    color: $primary;
 }
