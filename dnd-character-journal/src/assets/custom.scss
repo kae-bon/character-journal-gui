@@ -18,13 +18,6 @@ $form-check-input-focus-border: $primary;
 $form-check-input-focus-box-shadow: $focus-ring-box-shadow;
 $btn-color: $light;
 
-
-header {
-    background-color: $primary;
-}
-
-
-
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
 @import "../../node_modules/bootstrap/scss/maps";
@@ -44,9 +37,14 @@ header {
 @import "../../node_modules/bootstrap/scss/forms";
 @import "../../node_modules/bootstrap/scss/nav";
 @import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/alert";
 
 body {
     background-color: $dark;
+}
+
+header {
+    background-color: $primary;
 }
 
 .nav-link:hover {

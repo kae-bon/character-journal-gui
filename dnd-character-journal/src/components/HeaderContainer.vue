@@ -8,7 +8,6 @@
                     <a class="nav-link" href="#">your characters</a>
                     <a class="nav-link" href="#">journal</a>
                 </div>
-
             </div>
         </nav>
     </header>

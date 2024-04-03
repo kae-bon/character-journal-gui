@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="alert alert-warning alert-dismissible fade show alert-danger" role="alert" v-show="err">
-            <strong>Holy guacamole!</strong> {{ err }}
+            <strong>Uh oh, Adventurer!</strong> {{ err }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <h2 class="mb-5 mt-5 col">Register Your New Character!</h2>
@@ -31,10 +31,22 @@
                         <label :for="pclass.name">{{ pclass.name }}</label>
                     </div>
                 </div>
+
+                <div v-if="newCharacter.classes.length > 0">
+                    <div for="subclass" v-for="c in newCharacter.classes" v-bind:key="c">
+                        <label>Choose a {{ c }}
+                            Subclass:</label>
+                        <select class="form-select" aria-label="Default select example" id="subclass">
+                            <option selected>""</option>
+                            <option v-for="subclassArray in subclasses" v-bind:key="subclassArray" value="">
+                                {{ subclass }}</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="d-flex justify-content-between">
-                <input class="btn btn-primary text-light" type="submit" value="register character">
-                <button class="btn btn-danger text-light" @click.stop="resetForm">cancel</button>
+                <button class="btn btn-primary text-light">register character</button>
+                <button class="btn btn-danger text-light" @click.stop.prevent="resetForm">cancel</button>
             </div>
         </form>
     </div>
@@ -56,6 +68,14 @@ export default {
     computed: {
         classes() {
             return this.$store.state.classes;
+        },
+        subclasses() {
+            let subclasses = [];
+            for (let i = 0; i < this.newCharacter.classes.length; i++) {
+                const cl = this.$store.state.classes.find((c) => c.name === this.newCharacter.classes[i]);
+                subclasses.push(cl.subclasses);
+            }
+            return subclasses;
         }
     },
     methods: {
@@ -78,7 +98,7 @@ export default {
         },
         checkAtLeastOneClassSelected() {
             if (this.newCharacter.classes.length === 0) {
-                this.err = "At least one checkbox must be selected.";
+                this.err = "You must select at least one class for your character.";
             } else {
                 this.registerCharacter();
                 this.err = "";
@@ -89,20 +109,8 @@ export default {
 </script>
 
 <style scoped>
-p {
-    background-color: red;
-}
-
 form {
     background-color: #f1f1f1;
     border-radius: 2px;
 }
 </style>
-
-
-<!-- 
-$primary: #6494AA;
-$secondary: #636940;
-$ternary: #F28F3B;
-$light: #EEF4ED;
-$dark: #151515; -->
